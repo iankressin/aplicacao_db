@@ -57,8 +57,6 @@ create table en_remedio (
 	nome_remedio varchar(50)
 )
 
-drop table en_receita;
-
 create table en_receita(
 	cod_medico integer,
 	cod_clinica integer,
