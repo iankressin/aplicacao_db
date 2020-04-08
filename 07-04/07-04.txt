@@ -1,3 +1,4 @@
+-- Questão 1
 create table en_clinica (
 	cod_clinica serial primary key,
 	nome_clinica varchar(50),
@@ -84,6 +85,7 @@ create table en_convenio_utilizacao(
 )
 
 
+-- Questão 2
 insert into en_clinica(nome_clinica, dsc_endereco_clinica) values
 	('Clínica Biodinâmica', 'Av. Presidente Kennedy, 89 - São José'),
 	('Clínica Dermavitae', 'Av. Rio Branco, 1947 - Florianópolis')
@@ -185,4 +187,15 @@ insert into en_receita(cod_medico, cod_clinica, cod_especialidade, cod_local, co
 	(9,1,4,1,9,1),
 	(10,2,5,2,10,2)
 	
-alter table en_medico drop cascade constraint pk_medico;
+
+--Questão 3
+-- Já havia criado os campos como serial
+
+
+-- Questão 4
+alter table en_medico drop constraint pk_medico cascade
+alter table en_medico add constraint pk_medico primary key (cod_medico)
+
+-- Questão 5
+alter table en_convenio_utilizacao drop constraint pk_convenio_utilizacao cascade
+alter table en_convenio_utilizacao add cod_conv serial primary key
